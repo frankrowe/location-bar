@@ -1,6 +1,8 @@
 # location-bar
 *Display your current GPS coordinates in your OS X menu bar*
 
+![location-bar image](http://frankrowe.org/img/location-bar.png)
+
 1. Install BitBar
   - https://github.com/matryer/bitbar#get-started
 
