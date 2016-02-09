@@ -11,7 +11,17 @@
 
 WHEREAMI="$HOME/whereami"
 
-LAT=`$WHEREAMI | grep Latitude  | awk -F" " '{print $2}' | awk '{print $1}'`
-LNG=`$WHEREAMI | grep Longitude | awk -F" " '{print $2}' | awk '{print $1}'`
+LATS=`$WHEREAMI | grep Latitude  | awk -F" " '{print $2}' | awk '{print $1}'`
+LNGS=`$WHEREAMI | grep Longitude | awk -F" " '{print $2}' | awk '{print $1}'`
 
-printf "%.4f, %.4f\n" "$LAT" "$LNG"
+for word in $LATS
+do
+    LAT=$word
+done
+
+for word in $LNGS
+do
+    LNG=$word
+done
+
+LC_NUMERIC="en_US.UTF-8" printf "%.4f, %.4f\n" $LAT $LNG
